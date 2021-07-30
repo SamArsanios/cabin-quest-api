@@ -5,7 +5,7 @@ FactoryBot.define do
     password { "MyString" }
     firstname { "MyString" }
     lastname { "MyString" }
-    # isAdmin { false }
+    isAdmin { false }
     image { "MyString" }
   end
 end
