@@ -8,6 +8,7 @@ module Api
       # GET /cabins.json
       def index
         @cabins = Cabin.all.ordered_by_most_recent
+        render json: @cabins
       end
 
       # GET /cabins/1
@@ -20,7 +21,7 @@ module Api
         @cabin = Cabin.new(cabin_params)
 
         if @cabin.save
-          render :show#, status: :created
+          render json: @cabin #, status: :created
         else
           render json: @cabin.errors#, status: :unprocessable_entity
         end
