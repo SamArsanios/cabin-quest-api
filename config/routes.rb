@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :favourites, only: [:destroy, :create]
 
 
-      post '/create/signup', to: 'users#create' 
+      #post '/create/signup', to: 'users#create' 
       post '/auth/signin', to: 'user_token#create'
      
     end
