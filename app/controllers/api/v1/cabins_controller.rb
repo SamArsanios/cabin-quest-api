@@ -13,7 +13,9 @@ module Api
 
       # GET /cabins/1
       # GET /cabins/1.json
-      def show; end
+      def show
+        render json: @cabin
+      end
 
       # POST /cabins
       # POST /cabins.json

@@ -52,7 +52,7 @@ module Api
       def find_user
         @user = User.find_by!(username: params[:username])
         if @user
-          render :show#, status: :ok
+          render json: @user#, status: :ok
         else
           render json: @user.errors#, status: :unprocessable_entity
         end
