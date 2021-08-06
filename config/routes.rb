@@ -11,7 +11,6 @@ Rails.application.routes.draw do
         resources :image_uploaders, only: [:create]
         resources :favourites, only: [:destroy, :create, :index]
 
-
         #post '/create/signup', to: 'users#create' 
         post '/auth/signin', to: 'user_token#create'
       # end
