@@ -20,7 +20,7 @@ module Api
         def show; end
 
         def destroy
-          @favourite = Favourite.find(params[:id])
+          @favourite = Favourite.find_by(cabin_id: params[:id])
           if @favourite.destroy
             head :no_content
           else

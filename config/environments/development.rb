@@ -45,7 +45,7 @@ Rails.application.configure do
   # config.hosts << ENV['NGROK_HOST'] if ENV['NGROK_HOST'].present?
   # export NGROK_HOST=15e1a6b21b4c.ngrok.io
 
-  config.hosts << "5712317d944e.ngrok.io"
+  config.hosts << "f8197afa95a0.ngrok.io"
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
