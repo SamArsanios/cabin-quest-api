@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 # Use Active Model has_secure_password
+gem 'rubocop'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'email_validator'
