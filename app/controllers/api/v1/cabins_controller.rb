@@ -33,7 +33,7 @@ module Api
       # PUT /cabins/1
       # PUT /cabins/1.json
       def update
-        if current_user === @cabin.user || current_user.isAdmin 
+        if current_user === @cabin.user || current_user.isAdmin
           if @cabin.update(cabin_params)
             render :show # , status: :ok
           else
@@ -69,3 +69,4 @@ module Api
     end
   end
 end
+# rubocop:enable Style/CaseEquality
