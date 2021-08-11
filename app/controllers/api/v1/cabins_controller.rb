@@ -23,9 +23,9 @@ module Api
         @cabin = Cabin.new(cabin_params)
 
         if @cabin.save
-          render json: @cabin #, status: :created
+          render json: @cabin # , status: :created
         else
-          render json: @cabin.errors#, status: :unprocessable_entity
+          render json: @cabin.errors # , status: :unprocessable_entity
         end
       end
 
@@ -34,12 +34,12 @@ module Api
       def update
         if current_user === @cabin.user || current_user.isAdmin
           if @cabin.update(cabin_params)
-            render :show#, status: :ok
+            render :show # , status: :ok
           else
-            render json: @cabin.errors#, status: :unprocessable_entity
+            render json: @cabin.errors # , status: :unprocessable_entity
           end
         else
-          render json: 'You do not have permission to perform that action!'#, status: :unprocessable_entity
+          render json: 'You do not have permission to perform that action!' # , status: :unprocessable_entity
         end
       end
 
@@ -49,7 +49,7 @@ module Api
         if current_user === @cabin.user || current_user.isAdmin
           @cabin.destroy
         else
-          render json: 'You do not have permission to perform that action!'#, status: :unprocessable_entity
+          render json: 'You do not have permission to perform that action!' # , status: :unprocessable_entity
         end
       end
 
@@ -61,7 +61,7 @@ module Api
       end
 
       # Only allow a list of trusted parameters through.
-      def cabin_params                                                   #:status,
+      def cabin_params #:status,
         params.require(:cabin).permit(:name, :country, :address, :image, :slug, :region, :location, :user_id)
       end
     end

@@ -24,7 +24,7 @@ gem 'rubocop'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'email_validator'
-gem 'knock' , git: 'https://github.com/nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
+gem 'knock', git: 'https://github.com/nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
 gem 'cloudinary'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
