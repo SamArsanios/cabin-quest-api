@@ -1,4 +1,4 @@
-# Find your house API
+# Cabin Quest API
 
 This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as the final capstone project at Microverse. With this API, cabins can be added to database manually and favourites can be added by users.The repo for the front-end application can be accessed [here](https://github.com/SamArsanios/cabin-quest)
 
