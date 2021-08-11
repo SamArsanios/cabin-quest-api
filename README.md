@@ -1,24 +1,57 @@
-# README
+# Cabin Quest API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as the final capstone project at Microverse. With this API, cabins can be added to database manually and favourites can be added by users.The repo for the front-end application can be accessed [here](https://github.com/SamArsanios/cabin-quest)
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- The database has 3 tables User,Cabins and Favourite
+- User table has username, email, and password
+- Cabin table has name, address, and region
+- Favourite belongs to Cabin and User tables
+- Cabins and Favourites can be seen only by authorized users
+- To authorize users, this app uses JWT
+- For cross site policy Rack-cors was used  
+- The frontend of this project can be found in [github](https://github.com/SamArsanios/cabin-quest).
 
-* System dependencies
+## Built with
 
-* Configuration
+- Ruby
+- Ruby on rails
+- Postgresql
 
-* Database creation
+## Getting Started
 
-* Database initialization
+- Clone the repo `https://github.com/SamArsanios/cabin-quest`
+- cd `into` the project
+- To install all dependencies and necessary gems, run `bundle installl`
+- Run rails `db:create`
+- Run rails `db:migrate`
+- Run `rails server` to run rails application in your local server
+- To run tests write `bundle exec rspec` on the terminal
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Samson Kibrom**
 
-* Deployment instructions
+- Github: [@SamArsanios](https://github.com/SamArsanios)
+- Twitter: [@SamArsanios](https://twitter.com/SamArsanios)
+- Linkedin: [@Samson](https://www.linkedin.com/in/samson-kibrom)
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 👏 Acknowledgements
+
+- [Microverse](issues/)
+
+
+## 📝 License
+
+MIT License
