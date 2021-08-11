@@ -20,11 +20,4 @@ RSpec.describe Cabin, type: :model do
     expect(cabin).not_to be_valid
     expect(cabin.errors.messages[:name]).to include("can't be blank")
   end
-
-  # it 'should validate that only the right status is selected' do
-  #   user = FactoryBot.build :user
-  #   cabin = FactoryBot.build :cabin, user: user, status: 'not right'
-  #   expect(cabin).not_to be_valid
-  #   expect(cabin.errors.messages[:status]).to include("not right is not a valid status")
-  # end
 end

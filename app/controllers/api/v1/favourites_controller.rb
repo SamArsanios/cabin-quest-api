@@ -11,9 +11,9 @@ module Api
       def create
         favourite = user.favourites.new(favourites_params)
         if favourite.save
-          render json: favourite # , status: :created
+          render json: favourite
         else
-          render json: { error: favourite.errors } # , status: 422
+          render json: { error: favourite.errors } 
         end
       end
 
@@ -24,7 +24,7 @@ module Api
         if @favourite.destroy
           head :no_content
         else
-          render json: { error: @favourite.errors } # , status: 422
+          render json: { error: @favourite.errors }
         end
       end
 
