@@ -1,3 +1,4 @@
+# rubocop:disable Style/CaseEquality
 module Api
   module V1
     class CabinsController < ApplicationController
@@ -32,7 +33,7 @@ module Api
       # PUT /cabins/1
       # PUT /cabins/1.json
       def update
-        if current_user === @cabin.user || current_user.isAdmin
+        if current_user === @cabin.user || current_user.isAdmin 
           if @cabin.update(cabin_params)
             render :show # , status: :ok
           else
@@ -61,7 +62,8 @@ module Api
       end
 
       # Only allow a list of trusted parameters through.
-      def cabin_params #:status,
+      #:status,
+      def cabin_params
         params.require(:cabin).permit(:name, :country, :address, :image, :slug, :region, :location, :user_id)
       end
     end

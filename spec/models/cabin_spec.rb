@@ -8,7 +8,7 @@ RSpec.describe Cabin, type: :model do
   end
 
   it 'should test that user exist' do
-    user = FactoryBot.build :user
+    user = FactoryBot.build :user # rubocop:disable Lint/UselessAssignment
     cabin = FactoryBot.build :cabin # , status: 'available'
     expect(cabin).not_to be_valid
     expect(cabin.errors.messages[:user]).to include('must exist')
