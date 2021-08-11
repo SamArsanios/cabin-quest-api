@@ -42,10 +42,10 @@ module Api
           if @user.update(user_params)
             render json: @user
           else
-            render json: @user.errors 
+            render json: @user.errors
           end
         else
-          render json: 'Sorry you are not allowed to perform this operation.' 
+          render json: 'Sorry you are not allowed to perform this operation.'
         end
       end
 
@@ -54,7 +54,7 @@ module Api
         if @user
           render json: @user
         else
-          render json: @user.errors 
+          render json: @user.errors
         end
       end
 

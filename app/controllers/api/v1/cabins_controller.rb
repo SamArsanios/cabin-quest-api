@@ -56,7 +56,6 @@ module Api
 
       private
 
-      .
       def set_cabin
         @cabin = Cabin.find(params[:id])
       end

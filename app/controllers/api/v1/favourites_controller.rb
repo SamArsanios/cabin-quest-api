@@ -13,7 +13,7 @@ module Api
         if favourite.save
           render json: favourite
         else
-          render json: { error: favourite.errors } 
+          render json: { error: favourite.errors }
         end
       end
 
