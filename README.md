@@ -31,8 +31,8 @@ This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as
 ## API Endpoints
 
 The API will expose the following RESTful endpoints.
-### Local BaseUrl: {Host-URL}/api/v1
-### Live BaseUrl: {Host-URL}/api/v1
+### BaseUrl: {Host-URL}/api/v1
+
 
 | API Endpoint                  | Functionality                |
 |-------------------------------|------------------------------|
