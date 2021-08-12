@@ -28,6 +28,30 @@ This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as
 - Run `rails server` to run rails application in your local server
 - To run tests type `bundle exec rspec` on the terminal
 
+## API Endpoints
+
+The API will expose the following RESTful endpoints.
+### Local BaseUrl: {Host-URL}/api/v1
+### Live BaseUrl: {Host-URL}/api/v1
+
+| API Endpoint                  | Functionality                |
+|-------------------------------|------------------------------|
+| POST /users                   | Signup                       |
+| POST /auth/signin             | Signin                       |
+| GET /users                    | Lists all users              |
+| GET /users/:id                | Show a user                  |
+| DELETE /user/:id              | Delete a user                |
+| GET /dashboard/user           | Get user dashboard           |
+| POST /cabins                  | Add a new cabin              |
+| GET /cabins                   | Lists all cabins             |
+| GET /cabins/:id               | Show a cabin                 |
+| PUT /cabins/:id               | Update a cabin               |
+| DELETE /cabins/:id            | Delete a cabin               |
+| POST /favourites              | Add favourites cabin         |
+| GET user/:id/favourites       | Get user favourites cabin    |
+| DELETE /favourites/:id        | Delete a favourite           |
+| POST /image_uploaders         | Add/Upload Image             |
+
 ## Author
 
 👤 **Samson Kibrom**
