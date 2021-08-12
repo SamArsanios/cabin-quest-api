@@ -1,6 +1,6 @@
 # Cabin Quest API
 
-This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as the final capstone project at Microverse. With this API, cabins can be added to database manually and favourites can be added by users.The repo for the front-end application can be accessed [here](https://github.com/SamArsanios/cabin-quest)
+This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as the final capstone project at Microverse. With this API, cabins can be added to database and favourites can be added by users.The repo for the front-end application can be accessed [here](https://github.com/SamArsanios/cabin-quest)
 
 ## Features
 
@@ -9,9 +9,8 @@ This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as
 - Cabin table has name, address, and region
 - Favourite belongs to Cabin and User tables
 - Cabins and Favourites can be seen only by authorized users
-- To authorize users, this app uses JWT
+- JWT is used to authorize users 
 - For cross site policy Rack-cors was used  
-- The frontend of this project can be found in [github](https://github.com/SamArsanios/cabin-quest).
 
 ## Built with
 
@@ -24,10 +23,10 @@ This RESTFUL API was built with Ruby on Rails, and Postgres for the databases as
 - Clone the repo `https://github.com/SamArsanios/cabin-quest`
 - cd `into` the project
 - To install all dependencies and necessary gems, run `bundle installl`
-- Run rails `db:create`
-- Run rails `db:migrate`
+- Run `rails db:create`
+- Run `rails db:migrate`
 - Run `rails server` to run rails application in your local server
-- To run tests write `bundle exec rspec` on the terminal
+- To run tests type `bundle exec rspec` on the terminal
 
 ## Author
 
