@@ -3,17 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do 
-      # constraints ->(request) { request.format == :json } do
-        get '/dashboard/:username', to: 'users#find_user', as: 'user_detail'
-        get '/user/:id/favourites', to: 'users#user_favourites', as: 'user_favourites'
+        get '/user/:username', to: 'users#find_user'
+        get '/user/:id/favourites', to: 'users#user_favourites'
         resources :users
         resources :cabins
         resources :image_uploaders, only: [:create]
         resources :favourites, only: [:destroy, :create, :index]
-
-        #post '/create/signup', to: 'users#create' 
         post '/auth/signin', to: 'user_token#create'
-      # end
     end
   end
 end
