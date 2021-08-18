@@ -3,7 +3,6 @@ module Api
     class UsersController < ApplicationController
       before_action :set_user, only: %i[show user_favourites update destroy]
       before_action :authenticate_user, except: [:create]
-
       # GET /users
       # GET /users.json
       def index
@@ -28,10 +27,10 @@ module Api
         @user = User.new(user_params)
 
         if @user.save
-          render json: @user
+          render json: @user, status: :created
           # render :show
         else
-          render json: @user.errors
+          render json: @user.errors, status: :unprocessable_entity
         end
       end
 
@@ -40,21 +39,12 @@ module Api
       def update
         if current__user.isAdmin || current__user == @user
           if @user.update(user_params)
-            render json: @user
+            render json: @user, status: :ok
           else
-            render json: @user.errors
+            render json: @user.errors, status: :unprocessable_entity
           end
         else
-          render json: 'Sorry you are not allowed to perform this operation.'
-        end
-      end
-
-      def find_user
-        @user = User.find_by!(username: params[:username])
-        if @user
-          render json: @user
-        else
-          render json: @user.errors
+          render json: 'Sorry you are not allowed to perform this operation.', status: :unprocessable_entity
         end
       end
 
@@ -63,7 +53,7 @@ module Api
         if current__user.isAdmin
           @user.destroy
         else
-          render json: 'Sorry you are not allowed to perform this operation.'
+          render json: 'Sorry you are not allowed to perform this operation.', status: :unprocessable_entity
         end
       end
 
@@ -72,15 +62,6 @@ module Api
       # Use callbacks to share common setup or constraints between actions.
       def set_user
         @user = User.find(params[:id])
-      end
-
-      # Only allow a list of trusted parameters through.
-      def user_params
-        params.require(:user).permit(:username,
-                                     :email, :password,
-                                     :password_confirmation,
-                                     :firstname,
-                                     :lastname)
       end
     end
   end
