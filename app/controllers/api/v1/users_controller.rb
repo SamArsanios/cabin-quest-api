@@ -18,6 +18,7 @@ module Api
       def user_favourites
         @cabins = Cabin.all
         @user_fav = @user.user_favs(@user, @cabins)
+        # @user_fav = Cabin.where(id: @user.favourites)
         render json: @user_fav
       end
 
