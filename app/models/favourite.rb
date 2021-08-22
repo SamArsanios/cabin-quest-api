@@ -1,4 +1,4 @@
 class Favourite < ApplicationRecord
   belongs_to :user
-  has_many :cabins
+  belongs_to :cabin
 end
