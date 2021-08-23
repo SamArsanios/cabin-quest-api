@@ -3,12 +3,13 @@ module Api
   module V1
     class CabinsController < ApplicationController
       before_action :set_cabin, only: %i[show update destroy]
-      before_action :authenticate_user, except: %i[index show]
+      # before_action :authenticate_user, except: %i[index show]
+      before_action :authenticate_user
 
       # GET /cabins
       # GET /cabins.json
       def index
-        @cabins = Cabin.all.ordered_by_most_recent
+        @cabins = current_user.cabins.ordered_by_most_recent
         render json: @cabins
       end
 
@@ -21,7 +22,8 @@ module Api
       # POST /cabins
       # POST /cabins.json
       def create
-        @cabin = Cabin.new(cabin_params)
+        # @cabin = Cabin.new(cabin_params)
+        @cabin = current_user.cabins.build(cabin_params)
 
         if @cabin.save
           render json: @cabin, status: :created
