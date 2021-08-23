@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         resources :cabins
         resources :image_uploaders, only: [:create]
         resources :favourites, only: [:destroy, :create, :index]
-        resources :user_token, only: [:create]
     end
   end
+  resources :user_token, only: [:create]
 end
