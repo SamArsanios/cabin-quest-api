@@ -9,14 +9,4 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, email: true
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
-
-  # def user_favs(user, cabins)
-  #   favs = []
-  #   cabins.each do |cabin|
-  #     user.favourites.each do |fav|
-  #       favs.push(cabin) if cabin.id == fav.cabin_id
-  #     end
-  #   end
-  #   favs
-  # end
 end

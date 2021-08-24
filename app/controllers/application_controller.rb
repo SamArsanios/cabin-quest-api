@@ -1,16 +1,6 @@
 class ApplicationController < ActionController::API
   include Knock::Authenticable
 
-  # def find_user
-  #   # @user = User.find_by!(username: params[:username])
-  #   @user = current_user
-  #   if @user
-  #     render json: @user, status: :ok
-  #   else
-  #     render json: @user.errors, status: :unprocessable_entity
-  #   end
-  # end
-
   private
 
   def user_params

@@ -6,9 +6,6 @@ module Api
       # GET /users
       # GET /users.json
       def index
-        # @users = User.all
-        # render json: @users
-        # render :show
         @user = current_user
         if @user
           render json: @user, status: :ok
@@ -21,13 +18,6 @@ module Api
       # GET /users/1.json
       def show; end
 
-      # def user_favourites
-      #   @cabins = Cabin.all
-      #   @user_fav = @user.user_favs(@user, @cabins)
-      #   # @user_fav = Cabin.where(id: @user.favourites)
-      #   render json: @user_fav
-      # end
-
       # POST /users
       # POST /users.json
       def create
@@ -35,7 +25,6 @@ module Api
 
         if @user.save
           render json: @user, status: :created
-          # render :show
         else
           render json: @user.errors, status: :unprocessable_entity
         end

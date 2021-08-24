@@ -30,15 +30,11 @@ module Api
 
       private
 
-      def user_fa 
-        cabin_ids = current_user.favourites.pluck(:cabin_id) 
-        fa_cabins = current_user.cabins.where(id: cabin_ids) 
+      def user_fa
+        cabin_ids = current_user.favourites.pluck(:cabin_id)
+        fa_cabins = current_user.cabins.where(id: cabin_ids)
         fa_cabins.ordered_by_most_recent
-      end 
-
-      # def user
-      #   @user ||= User.find(favourites_params[:user_id])
-      # end
+      end
 
       def favourites_params
         params.require(:favourite).permit(:user_id, :cabin_id)
