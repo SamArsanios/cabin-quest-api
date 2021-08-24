@@ -26,3 +26,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /app/controllers/api/v1/endpoints.rb
+
+ngrok
+ngrok-stable-linux-amd64.zip
