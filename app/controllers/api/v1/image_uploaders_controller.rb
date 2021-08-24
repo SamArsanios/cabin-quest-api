@@ -8,7 +8,7 @@ module Api
       end
 
       def image_uploader_params
-        params.permit(:image)
+        params.require(:uploader).permit(:image)
       end
     end
   end
