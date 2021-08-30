@@ -4,7 +4,7 @@ module Api
       before_action :authenticate_user
 
       def index
-        @favourites = user_fa
+        @favourites = Cabin.user_favourites(current_user)
         render json: @favourites
       end
 
@@ -29,12 +29,6 @@ module Api
       end
 
       private
-
-      def user_fa
-        cabin_ids = current_user.favourites.pluck(:cabin_id)
-        fa_cabins = current_user.cabins.where(id: cabin_ids)
-        fa_cabins.ordered_by_most_recent
-      end
 
       def favourites_params
         params.require(:favourite).permit(:user_id, :cabin_id)
