@@ -4,7 +4,8 @@ module Api
       before_action :authenticate_user
 
       def index
-        @favourites = Cabin.user_favourites(current_user)
+        # @favourites = Cabin.user_favourites(current_user)
+        @favourites = current_user.favourites
         render json: @favourites
       end
 
