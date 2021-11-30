@@ -3,7 +3,6 @@ module Api
   module V1
     class CabinsController < ApplicationController
       before_action :set_cabin, only: %i[show update destroy]
-      # before_action :authenticate_user, except: %i[index show]
       before_action :authenticate_user
 
       # GET /cabins
