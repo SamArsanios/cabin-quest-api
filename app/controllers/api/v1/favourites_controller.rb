@@ -5,7 +5,6 @@ module Api
 
       def index
         @favourites = Cabin.user_favourites(current_user)
-        # @favourites = current_user.favourites
         render json: @favourites
       end
 
