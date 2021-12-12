@@ -21,7 +21,6 @@ module Api
       # POST /cabins
       # POST /cabins.json
       def create
-        # @cabin = Cabin.new(cabin_params)
         @cabin = current_user.cabins.build(cabin_params)
 
         if @cabin.save
